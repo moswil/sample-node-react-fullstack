@@ -1,0 +1,22 @@
+/* Card.css */
+.home {
+	width: 75%; /* Cover three-quarters of the page */
+	max-width: 800px; /* Set a maximum width if needed */
+	margin: 0 auto; /* Center the card horizontally */
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	text-align: center; /* Center the content inside the card */
+}
+
+.home h2 {
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+.home img {
+	max-width: 100%;
+	height: auto;
+	margin-top: 20px; /* Add some space between the header and image */
+}

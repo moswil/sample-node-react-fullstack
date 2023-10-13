@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  # banking-app-backend:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   image: banking-app-backend
+  #   env_file:
+  #     - ./backend/.env
+  #   ports:
+  #     - '8085:8085'
+  #   depends_on:
+  #     - mongodb
+  #   volumes:
+  #     - .:/src
+  #   networks:
+  #     - banking-app
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - banking-app
+
+volumes:
+  mongodb_data_container:
+
+networks:
+  banking-app:
+    driver: bridge

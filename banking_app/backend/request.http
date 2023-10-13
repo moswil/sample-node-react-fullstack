@@ -1,0 +1,52 @@
+### Base URL
+@base_url = http://localhost:8085/api/v1/users
+
+### Register
+POST {{base_url}}/register HTTP/1.1
+content-type: application/json
+
+{
+  "name": "moswil",
+  "email": "moseswillfred1@gmail.com",
+  "password": "Test@1234"
+}
+
+### Login
+POST {{base_url}}/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "moseswillfred1@gmail.com",
+  "password": "Test@1234"
+}
+
+### Variables
+@auth_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Mjk1OWJkYzkxYjRmNWZkN2JiOWEzZSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTY5NzIwODc2NX0.X4xFNtdY4VM0e3KqEfrKy0wMWMWDrx1bm3l9HgthM18
+
+### Get All Accounts
+GET {{base_url}}/
+content-type: application/json
+Authorization: {{auth_token}}
+
+### Get Balance
+GET {{base_url}}/balance HTTP/1.1
+content-type: application/json
+Authorization: {{auth_token}}
+
+### Deposit
+POST {{base_url}}/deposit HTTP/1.1
+content-type: application/json
+Authorization: {{auth_token}}
+
+{
+  "depositAmount": 40
+}
+
+### Withdraw
+POST {{base_url}}/withdraw HTTP/1.1
+content-type: application/json
+Authorization: {{auth_token}}
+
+{
+  "withdrawAmount": 10
+}
